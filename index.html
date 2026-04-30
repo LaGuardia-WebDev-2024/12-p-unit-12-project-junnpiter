@@ -21,74 +21,105 @@ Select ONE Additional Feature to Add
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <h1>Quiz About [Me]</h1>
+    <h1>How Well Do You Know Jun?</h1>
     <hr />
-    <!-- Movie Question -->
-    <form id="movie-form">
+    <!-- Bias Question -->
+    <form id="dkb-form">
       <label>
-        🎥 What is my favorite movie?
-        <select id="movie-answer">
-          <option value="movie1">movie 1</option>
-          <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
-          <option value="movie4">movie 4</option>
+        Who is my DKB bias?
+        <select id="dkb-answer">
+          <option value="dkb1">Lune</option>
+          <option value="dkb2">Heechan</option>
+          <option value="dkb3">Harry-June</option>
+          <option value="dkb4">idk stop yelling at me</option>
         </select>
       </label>
-      <button type="submit">Check Movie Answer</button>
+      <button type="submit">Do you remember?</button>
     </form>
-    <div id="movie-result">
-      <p id="movie-text"></p>
+    <div id="dkb-result">
+      <p id="dkb-text"></p>
     </div>
     <hr />
-    <!-- Book Question -->
-    <form id="book-form">
+    <!-- Major Question -->
+    <form id="major-form">
       <label>
-        📖 What is my favorite book?
-        <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+        What major am I?
+        <select id="major-answer">
+          <option value="major1">Drama</option>
+          <option value="major2">Vocal</option>
+          <option value="major3">Art</option>
+          <option value="major4">Instrumental</option>
         </select>
       </label>
-      <button type="submit">Check Book Answer</button>
+      <button type="submit">Overthink it.</button>
     </form>
-    <div id="book-result">
-      <p id="book-text"></p>
+    <div id="major-result">
+      <p id="major-text"></p>
     </div>
+  <!-- Drink Question -->
+    <form id="drink-form">
+      <label>
+        What is my favorite drink?
+        <select id="drink-answer">
+          <option value="drink1">Strawberry Milk</option>
+          <option value="drink2">Iced Coffee</option>
+          <option value="drink3">Sprite</option>
+          <option value="drink4">Matcha</option>
+        </select>
+      </label>
+      <button type="submit">You thirsty yet?</button>
+    </form>
+    <div id="drink-result">
+      <p id="drink-text"></p>
+    </div>
+    <hr />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
       
-      //========================Movie Question jQuery Code
-      $("#movie-form").on("submit", function (event) {
+      //========================Bias Question jQuery Code
+      $("#dkb-form").on("submit", function (event) {
         event.preventDefault();
 
-        var $answer = $("#movie-answer");
+        var $answer = $("#dkb-answer");
         var answer = $answer.val();
 
-        if (answer === "movie1") {
-          $("#movie-text").text("YESSSS!");
+        if (answer === "dkb3") {
+          $("#dkb-text").text("i'd be personally offended if you got this wrong. yes! my bias is Harry-June <3");
         } 
         else {
-          $("#movie-text").text("Try Again!");
+          $("#dkb-text").text("i've done at least four projects about him. you didn't get this right, and i'm rather impressed.");
         }
       });
 
-      //=======================Book Question jQuery Code
-      $("#book-form").on("submit", function (event) {
+      //=======================Major Question jQuery Code
+      $("#major-form").on("submit", function (event) {
         event.preventDefault();
 
-        var $answer = $("#book-answer");
+        var $answer = $("#major-answer");
         var answer = $answer.val();
 
-        if (answer === "book1") {
-          $("#book-text").text("YESSSS!");
+        if (answer === "major2") {
+          $("#major-text").text("hayyee you got it! come to the show choir show... on may 8th... ok...?");
         } 
         else {
-          $("#book-text").text("Try Again!");
+          $("#major-text").text("yea i get that a lot, but no");
         }
       });
-      
+
+        //=======================Drink Question jQuery Code
+      $("#drink-form").on("submit", function (event) {
+        event.preventDefault();
+
+        var $answer = $("#drink-answer");
+        var answer = $answer.val();
+
+        if (answer === "drink4") {
+          $("#drink-text").text("yumyyyummum... matcja....");
+        } 
+        else {
+          $("#drink-text").text("nah man");
+        }
+      });
     </script>
   </body>
 
