@@ -1,7 +1,7 @@
 <!-- Unit 12 Project
 Requirements
-[  ] Two Interactive Drop-down Inputs 
-[  ] Standard Animation
+[ x ] Two Interactive Drop-down Inputs 
+[ x ] Standard Animation
 [  ] Custom Animation
 [  ] Include Three Images
 
@@ -38,8 +38,11 @@ Select ONE Additional Feature to Add
     </form>
     <div id="dkb-result">
       <p id="dkb-text"></p>
+      <img id="dkb-img" src="https://i.pinimg.com/736x/37/3f/32/373f32967990d7528df1b92c621e9189.jpg
+ " width="300" height="auto">
     </div>
     <hr />
+
     <!-- Major Question -->
     <form id="major-form">
       <label>
@@ -56,6 +59,7 @@ Select ONE Additional Feature to Add
     <div id="major-result">
       <p id="major-text"></p>
     </div>
+    <hr /> 
   <!-- Drink Question -->
     <form id="drink-form">
       <label>
@@ -73,9 +77,72 @@ Select ONE Additional Feature to Add
       <p id="drink-text"></p>
     </div>
     <hr />
+
+    <!-- animal Question -->
+    <form id="animal-form">
+      <label>
+        What is my favorite animal?
+        <select id="animal-answer">
+          <option value="animal1">Cat</option>
+          <option value="animal2">Bunny</option>
+          <option value="animal3">Fox</option>
+          <option value="animal4">Ferret</option>
+        </select>
+      </label>
+      <button type="submit">nyam nyam nyam</button>
+    </form>
+    <div id="animal-result">
+      <p id="animal-text"></p>
+      <img id="animal-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHSAtoB7E0boxkv5hcCLsPVM_wPutVZZhfFKqG0C5iXt9iPL3n1XLdGjE59aYkwSS99D_d-gipiGabtuAO8q1_Ld5fP49Ji_-g2hjYxZM&s=10" width="300" height="auto">
+    </div>
+    <hr />
+
+        <!-- ult Question -->
+    <form id="ult-form">
+      <label>
+        Which three are my ult groups?
+        <select id="ult-answer">
+          <option value="ult1">NCT, DKB, The Boyz</option>
+          <option value="ult2">DKB, Enhypen, BTS</option>
+          <option value="ult3">ALD1, DKB, NCT</option>
+          <option value="ult4">please leave me alone stop yelling at me</option>
+        </select>
+      </label>
+      <button type="submit">ouughgh..</button>
+    </form>
+    <div id="ult-result">
+      <p id="ult-text"></p>
+    </div>
+    <hr />
+
+            <!-- redred Question -->
+    <form id="redred-form">
+      <label>
+        Which song is Unity performing on Fiorello Friday May 15th which you should come see? This definitely wasn't a question because I ran out of ideas
+        <select id="redred-answer">
+          <option value="redred1">GREENGREEN by CORTIS</option>
+          <option value="redred2">Turning Point (prod. Joohoney) by DKB</option>
+          <option value="redred3">REDRED by CORTIS</option>
+          <option value="redred4">i dont even wake up early enough for first</option>
+        </select>
+      </label>
+      <button type="submit">uhh..</button>
+    </form>
+    <div id="redred-result">
+      <p id="redred-text"></p>
+      
+    </div>
+    <hr />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
       
+$("#dkb-result").hide();
+$("#major-result").hide();
+$("#drink-result").hide();
+$("#animal-result").hide();
+$("#ult-result").hide();
+$("#redred-result").hide();
+
       //========================Bias Question jQuery Code
       $("#dkb-form").on("submit", function (event) {
         event.preventDefault();
@@ -85,10 +152,16 @@ Select ONE Additional Feature to Add
 
         if (answer === "dkb3") {
           $("#dkb-text").text("i'd be personally offended if you got this wrong. yes! my bias is Harry-June <3");
+               $("#dkb-result").show(1000);
+               $("#dkb-img").show(1000);
         } 
         else {
           $("#dkb-text").text("i've done at least four projects about him. you didn't get this right, and i'm rather impressed.");
+          $("#dkb-img").hide(1000);     
+          $("#dkb-result").show(1000);
+  
         }
+
       });
 
       //=======================Major Question jQuery Code
@@ -100,9 +173,11 @@ Select ONE Additional Feature to Add
 
         if (answer === "major2") {
           $("#major-text").text("hayyee you got it! come to the show choir show... on may 8th... ok...?");
+               $("#major-result").show(1000);
         } 
         else {
           $("#major-text").text("yea i get that a lot, but no");
+               $("#major-result").show(1000);
         }
       });
 
@@ -115,10 +190,68 @@ Select ONE Additional Feature to Add
 
         if (answer === "drink4") {
           $("#drink-text").text("yumyyyummum... matcja....");
+                 $("#drink-result").show(1000);
         } 
         else {
           $("#drink-text").text("nah man");
+                 $("#drink-result").show(1000);
         }
+      });
+
+          //=======================animal Question jQuery Code
+      $("#animal-form").on("submit", function (event) {
+        event.preventDefault();
+
+        var $answer = $("#animal-answer");
+        var answer = $answer.val();
+
+        if (answer === "animal2") {
+          $("#animal-text").text("YES !! i love bunnies so much you actually don't understand i want a freaking holland lop so bad");
+               $("#animal-result").show(1000);
+               $("animal-img").show(1000);
+        } 
+        else {
+          $("#animal-text").text("very cute, but no");
+          $("#animal-img").hide(1000);       
+          $("#animal-result").show(1000);
+
+        }
+      });
+
+          //=======================ult Question jQuery Code
+      $("#ult-form").on("submit", function (event) {
+        event.preventDefault();
+
+        var $answer = $("#ult-answer");
+        var answer = $answer.val();
+
+        if (answer === "ult1") {
+          $("#ult-text").text("yes! i've seen nct in concert twice and have yet to see dkb or tbz in concert because they don't come to the u.s. freaking ever. #imlosing");
+               $("#ult-result").show(1000);
+        } 
+        else {
+          $("#ult-text").text("noooope! sorry homie");
+                 $("#ult-result").show(1000);
+        }
+      });
+
+            //=======================redred Question jQuery Code
+      $("#redred-form").on("submit", function (event) {
+        event.preventDefault();
+
+        var $answer = $("#redred-answer");
+        var answer = $answer.val();
+
+        if (answer === "redred3") {
+          $("#redred-text").text("yescome watch us becusase we're so cool and and cool andcool and");
+               $("#redred-result").show(1000);
+        } 
+        else {
+          $("#redred-text").text("no soz ://");
+                 $("#redred-result").show(1000);
+        }
+
+ 
       });
     </script>
   </body>
